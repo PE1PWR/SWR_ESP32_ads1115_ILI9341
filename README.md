@@ -8,3 +8,8 @@ The touch will be used to adjust the scale true a setup menu for more than 100 w
 The formula used for the SWR calculation VSWR = 1+ (Pref / Pfwd) / 1− (Pref / Pfwd) In the programming you can adjust the scale yourself and calibrate it if necessary.
 
 Note the design has been tested with USB 5 volts. In practice this will be around 4.5V. If you want to use a battery of 3.7 volts, put in a converter to 5 volts. If the values expire after using a 5v module, you can adjust them yourself in the code. Will perform a test itself to check progress. If this is the case, I will enter 2 codes one for USB 5v and one for a battery with 5 volt module. And now there is allready another version with protecion relay. Its V12 version. More info see script.
+
+The ESP version V12 has now been expanded with additional security.
+As soon as the SWR rises above 1: 3, a relay will ensure that the linear is turned off.
+It is then only possible to unlock the protection when the SWR drops below 1: 3 again.
+A red LED will signal that the security has come in and that the SWR is not good
