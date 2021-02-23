@@ -1,4 +1,4 @@
-# SWR_ESP32_asd1115_ILI9341
+# SWR_ESP32_ads1115_ILI9341
 This is a smal project for making your SWR digital.
 This is a project to make your SWR measurement digital.
 The principle is based on the fact that you measure which energy is radiated and which energy is radiated back.
