@@ -11,21 +11,21 @@
     tft.fillRoundRect(167,22,x+78,y+33, 15, ILI9341_BLACK); // Bouw zwarte achtergond op van meterB.
     tft.drawRoundRect(2,22, x+78,y+32, 15, ILI9341_GREEN);  // Bouw rand groen op van meterA die zwarte achtergrond overschrijft.
     tft.drawRoundRect(167,22,x+78,y+33, 15, ILI9341_GREEN); // Bouw rand groen op van meterB die zwarte achtergrond overschrijft. 
-    tft.setCursor (x-28,y+65) ; //  
+    tft.setCursor (x-28,y+65) ;   
     tft.setTextColor(ILI9341_BLACK);
-    tft.print("POWER"); // Zet POWER in groene gedeelte
+    tft.print("POWER");// Zet POWER in groene gedeelte
     tft.setCursor (a-14,b+65);
-    tft.print("SWR");   // Zet SWR in groene gedeelte
+    tft.print("SWR");  // Zet SWR in groene gedeelte
     tft.setTextSize(1);
     tft.setCursor(a-2,b-95);
     tft.setTextColor(ILI9341_WHITE);
-    tft.print("5"); // Schaal indicatie SWR 
+    tft.print("5");   // Schaal indicatie SWR 
     tft.setCursor(a-35,b-90);
     tft.setTextColor(ILI9341_WHITE);
-    tft.print("3"); // Schaal indicatie SWR
+    tft.print("3");   // Schaal indicatie SWR
     tft.setCursor(a-64,b-73);
     tft.setTextColor(ILI9341_WHITE);
-    tft.print("0"); // Schaal indicatie SWR
+    tft.print("0");   // Schaal indicatie SWR
     tft.drawTriangle(241, 42, 241, 50, 255, 43, ILI9341_RED);  // start 1e rode blok SWR (2 triangles tegen elkaar)
     tft.fillTriangle(241, 42, 241, 50, 255, 43, ILI9341_RED);
     tft.drawTriangle(241, 50, 255, 43, 255, 50, ILI9341_RED);
