@@ -32,11 +32,11 @@ Adafruit_ADS1115 ads(0x48); // AD converter module
      
 void setup()
 {    
-     tft.begin();     // Starting TFT display support
-     tft.setRotation(3);   // Rotate through 270-degrees
+     tft.begin();                   // Starting TFT display support
+     tft.setRotation(3);            // Rotate through 270-degrees
      tft.fillScreen(ILI9341_BLACK); // Clear display.
-     ads.begin(); // Start asd1115 module
-     #include "SWR_color.h" // Building display colors en text
+     ads.begin();                   // Start asd1115 module
+     #include "SWR_color.h"         // Building display colors en text
      pinMode(LEDPIN, OUTPUT);
      pinMode(PushButton, INPUT);
      pinMode(relay, OUTPUT);
@@ -106,35 +106,35 @@ void display_valueB (float SWR)   // Draw analog meterB.
  
 void loop()
 {
-         display_meterA(0); // Start building meterA(PWR)
-         display_meterB(0); // Start building meterB(SWR)
-         int16_t adc0;  // Read input voltage from Vfwd A0 asd1115
-         int16_t adc1;  // Read input voltage from Vrev A1 asd1115 
+         display_meterA(0);               // Start building meterA(PWR)
+         display_meterB(0);               // Start building meterB(SWR)
+         int16_t adc0;                    // Read input voltage from Vfwd A0 asd1115
+         int16_t adc1;                    // Read input voltage from Vrev A1 asd1115 
          adc0 = ads.readADC_SingleEnded(0);
          adc1 = ads.readADC_SingleEnded(1);
-         Vfwd = (adc0 * 0.1875)/1000; // Formula for adjust voltage (Vfwd)
-         Vrev = (adc1 * 0.1875)/1000; // Formula for adjust voltage (Vrev)
-         Pfwd = (Vfwd * Vfwd)*10.5; // Formula wattage Pfwd
-         Prev = (Vrev * Vrev)*10.5; // Formula wattage Prev
+         Vfwd = (adc0 * 0.1875)/1000;     // Formula for adjust voltage (Vfwd)
+         Vrev = (adc1 * 0.1875)/1000;     // Formula for adjust voltage (Vrev)
+         Pfwd = (Vfwd * Vfwd)*10.5;       // Formula wattage Pfwd
+         Prev = (Vrev * Vrev)*10.5;       // Formula wattage Prev
          PfwdA = (Vfwd * Vfwd)*10.5 /10 ; // Correction formula for analog power meter     
          float fp = sqrt ( Prev / Pfwd ); // Formula SWR Prev / Pfwd int is fp
-         SWR = ( 1 + fp ) / ( 1 - fp ); // Formula second part SWR 1+fp / 1-fp                          
-         SWR = constrain(SWR, 1, 99.9); // some more than 100 // go further 
-         if (Pfwd <= 1) SWR=1; // Stabilised swr meter when power = 0. 
+         SWR = ( 1 + fp ) / ( 1 - fp );   // Formula second part SWR 1+fp / 1-fp                          
+         SWR = constrain(SWR, 1, 99.9);   // some more than 100 // go further 
+         if (Pfwd <= 1) SWR=1;            // Stabilised swr meter when power = 0. 
          if (PfwdA >= 10)
              {
               PfwdA = 10;
-             }           // Protection analog meter. 100W max
-             input_valueA = (PfwdA);   // Take niveau input for meterA (power) 
-             display_valueA(PfwdA); // Undraw then Draw the meter needle (PWR)
+             }                                // Protection analog meter. 100W max
+             input_valueA = (PfwdA);          // Take niveau input for meterA (power) 
+             display_valueA(PfwdA);           // Undraw then Draw the meter needle (PWR)
           int Push_button_state = digitalRead(PushButton); // Unlock protection relay after high SWR 1:3
               if ( Push_button_state == HIGH) // Read state of button
               {
-                  digitalWrite(relay, LOW); // Shutdown protection relay
+                  digitalWrite(relay, LOW);   // Shutdown protection relay
               }  
               if ( Push_button_state == HIGH) // Read state of button  
                 {
-                  digitalWrite(LEDPIN, LOW); // Shutdown red LED 
+                  digitalWrite(LEDPIN, LOW);  // Shutdown red LED 
                 }
 
 
@@ -144,16 +144,16 @@ void loop()
          tft.setTextSize(1);
          tft.setCursor (x-55,y+20);
          tft.print("F");
-         tft.setCursor (x-40,y+20) ; // Show digital info "F" whitin in meterA(POWER) 
-         if (Vfwd <= 1.0) // after if stops 1 decimal digital info. >= 10 W
+         tft.setCursor (x-40,y+20) ;  // Show digital info "F" whitin in meterA(POWER) 
+         if (Vfwd <= 1.0)             // after if stops 1 decimal digital info. >= 10 W
 
             {
-             tft.print(Pfwd, 1); //   after if stops 1 decimal digital info. >= 10 W
+             tft.print(Pfwd, 1);      // after if stops 1 decimal digital info. >= 10 W
              tft.print(" ");
             }
              else 
                 {
-                tft.print(Pfwd, 0); // Above 10 W till 100W.
+                tft.print(Pfwd, 0);   // Above 10 W till 100W.
                 tft.print(" ");
                 }
          }      
@@ -163,24 +163,24 @@ void loop()
          tft.setTextSize(1);
          tft.setCursor (x+10,y+20);
          tft.print("R");
-         tft.setCursor (x+30,y+20);  // Show digital info "R" whitin in meterA(POWER) 
-         if (Vrev <= 1.0) // Niveau om door te gaan na 10 watt
+         tft.setCursor (x+30,y+20);    // Show digital info "R" whitin in meterA(POWER) 
+         if (Vrev <= 1.0)              // Niveau om door te gaan na 10 watt
              { 
-             tft.print(Prev, 1);  // after if stops 1 decimal digital info. >= 10 W
+             tft.print(Prev, 1);       // after if stops 1 decimal digital info. >= 10 W
              tft.print(" ");
              }
          
             else 
                {
-               tft.print(Prev, 0); // Above 10 W till 100W.
+               tft.print(Prev, 0);     // Above 10 W till 100W.
                tft.print(" ");
                 }}     
       
         {
-       int swr = (SWR / 4.2) * 310;// Adjust formula for correct SWR digital whitin meter.(SWR)
+       int swr = (SWR / 4.2) * 310;    // Adjust formula for correct SWR digital whitin meter.(SWR)
         tft.setCursor(a-14,b+20);
         tft.print(SWR,1);
-        if (SWR >= 3) // If SWR above 1:3 powerup protection relais.
+        if (SWR >= 3)                  // If SWR above 1:3 powerup protection relais.
            { 
            digitalWrite(relay, HIGH);  // Relay on above SWR 1:3 and stay on till button will release protection
            digitalWrite(LEDPIN, HIGH);
@@ -192,9 +192,9 @@ void loop()
         if (SWR > 10)          
              {
               SWR=10;
-             }              //  // Protection analog meter. max SWR 1:10 max
-             input_valueB = (SWR);  // Take niveau input for MeterB (SWR)
-             display_valueB(SWR);   // Undraw then Draw the meter needle (SWR)
+             }                         // Protection analog meter. max SWR 1:10 max
+             input_valueB = (SWR);     // Take niveau input for MeterB (SWR)
+             display_valueB(SWR);      // Undraw then Draw the meter needle (SWR)
                     
    }  // End loop
 
