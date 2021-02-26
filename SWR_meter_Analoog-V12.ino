@@ -28,7 +28,7 @@ Adafruit_ADS1115 ads(0x48); // AD converter module
       const int LEDPIN = 26;
       const int PushButton = 13; // Unlock relay after high SWR 1:3.
       const int relay = 32;
-
+      const int LEDDisp = 33;
      
 void setup()
 {    
@@ -40,6 +40,8 @@ void setup()
      pinMode(LEDPIN, OUTPUT);
      pinMode(PushButton, INPUT);
      pinMode(relay, OUTPUT);
+     pinMode(LEDDisp, OUTPUT);
+     digitalWrite(LEDDisp, LOW);
 }
 void display_meterA(float scalA)// Draw analog meterA.
 {
