@@ -16,3 +16,4 @@ A red LED will signal that the security has come in and that the SWR is not good
 
 Release V14 is a small adjustment to make the display not start earlier when the background is finished with all settings.
 This takes about 3 seconds.
+Release V14.1 is a small adjustment to show version details before starting.
