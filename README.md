@@ -13,3 +13,6 @@ The ESP version V12 has now been expanded with additional security.
 As soon as the SWR rises above 1: 3, a relay will ensure that the linear is turned off.
 It is then only possible to unlock the protection when the SWR drops below 1: 3 again.
 A red LED will signal that the security has come in and that the SWR is not good
+
+Release V14 is a small adjustment to make the display not start earlier when the background is finished with all settings.
+This takes about 3 seconds.
