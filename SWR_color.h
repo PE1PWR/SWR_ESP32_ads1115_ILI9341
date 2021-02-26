@@ -1,6 +1,18 @@
-  /// Bouw rood gedeelte op SWR meter 
+  /// Building SWR information Display 
    
 
+    tft.fillScreen(ILI9341_BLACK); // Clear display.
+    tft.setTextColor(ILI9341_WHITE);
+    tft.setCursor(0,0);                                     
+    tft.setTextSize(1);                                    
+    tft.print("            HF SWR meter made by PE1PWR"); 
+    delay(1000);
+    tft.setCursor(0,60);                                     // Put cursur left on screen above.
+    tft.setTextSize(1); 
+    tft.print("            Sofware version V14    2021");
+    delay(2000);  
+    digitalWrite(LEDDisp, HIGH);        
+    tft.fillScreen(ILI9341_BLACK); // Clear display.
     tft.setCursor(0,0);                                     // Put cursur left on screen above.
     tft.setTextSize(2);                                     // text size to normal for the ILI9341
     tft.print("       HF SWR meter");                       // Display title
