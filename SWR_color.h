@@ -1,5 +1,6 @@
-  /// Building SWR information Display 
+  /// Bouw rood gedeelte op SWR meter 
    
+ 
 
     tft.fillScreen(ILI9341_BLACK); // Clear display.
     tft.setTextColor(ILI9341_WHITE);
@@ -9,7 +10,7 @@
     delay(1000);
     tft.setCursor(0,60);                                     // Put cursur left on screen above.
     tft.setTextSize(1); 
-    tft.print("            Sofware version V14    2021");
+    tft.print("            Sofware version V14.1  2021");
     delay(2000);  
     digitalWrite(LEDDisp, HIGH);        
     tft.fillScreen(ILI9341_BLACK); // Clear display.
@@ -37,7 +38,7 @@
     tft.print("3");             // Scale indication SWR
     tft.setCursor(a-64,b-73);
     tft.setTextColor(ILI9341_WHITE);
-    tft.print("0");             // Schaal indicatie SWR
+    tft.print("1");             // Schaal indicatie SWR
     tft.drawTriangle(241, 42, 241, 50, 255, 43, ILI9341_RED);  // start 1e red block SWR (2 triangles)
     tft.fillTriangle(241, 42, 241, 50, 255, 43, ILI9341_RED);
     tft.drawTriangle(241, 50, 255, 43, 255, 50, ILI9341_RED);
@@ -58,18 +59,18 @@
     tft.fillTriangle(297, 65, 293, 71, 307, 77, ILI9341_RED);
     tft.drawTriangle(292, 71, 307, 77, 301, 80, ILI9341_RED);
     tft.fillTriangle(292, 71, 307, 77, 301, 80, ILI9341_RED);  // end 5e red block SWR
-    tft.drawTriangle(226, 43, 226, 50, 240, 42, ILI9341_ORANGE);  // start 1e Orange block SWR (2 triangles)
-    tft.fillTriangle(226, 43, 226, 50, 240, 42, ILI9341_ORANGE);
-    tft.drawTriangle(226, 50, 240, 42, 240, 50, ILI9341_ORANGE);  
-    tft.fillTriangle(226, 50, 240, 42, 240, 50, ILI9341_ORANGE);  // end 1e orange block SWR
-    tft.drawTriangle(210, 47, 213, 53, 224, 43, ILI9341_ORANGE);  // start 2e Orange block SWR (2 triangles)
-    tft.fillTriangle(210, 47, 213, 53, 224, 43, ILI9341_ORANGE);
-    tft.drawTriangle(213, 53, 224, 43, 225, 50, ILI9341_ORANGE);  
-    tft.fillTriangle(213, 53, 224, 43, 225, 50, ILI9341_ORANGE);  // end 2e orange block SWR
-    tft.drawTriangle(197, 53, 199, 59, 210, 47, ILI9341_GREEN);   // start 1e green block SWR (2 triangles)
-    tft.fillTriangle(197, 53, 199, 59, 210, 47, ILI9341_GREEN);  
-    tft.drawTriangle(199, 59, 210, 47, 213, 55, ILI9341_GREEN);  
-    tft.fillTriangle(199, 59, 210, 47, 213, 55, ILI9341_GREEN);   // end 1e green block SWR
+    tft.drawTriangle(226, 43, 226, 50, 240, 42, ILI9341_RED);  // start 1e Orange block SWR (2 triangles)
+    tft.fillTriangle(226, 43, 226, 50, 240, 42, ILI9341_RED);
+    tft.drawTriangle(226, 50, 240, 42, 240, 50, ILI9341_RED);  
+    tft.fillTriangle(226, 50, 240, 42, 240, 50, ILI9341_RED);  // end 1e orange block SWR
+    tft.drawTriangle(210, 47, 213, 53, 224, 43, ILI9341_RED);  // start 2e Orange block SWR (2 triangles)
+    tft.fillTriangle(210, 47, 213, 53, 224, 43, ILI9341_RED);
+    tft.drawTriangle(213, 53, 224, 43, 225, 50, ILI9341_RED);  
+    tft.fillTriangle(213, 53, 224, 43, 225, 50, ILI9341_RED);  // end 2e orange block SWR
+    tft.drawTriangle(197, 53, 199, 59, 210, 47, ILI9341_ORANGE);   // start 1e green block SWR (2 triangles)
+    tft.fillTriangle(197, 53, 199, 59, 210, 47, ILI9341_ORANGE);  
+    tft.drawTriangle(199, 59, 210, 47, 213, 55, ILI9341_ORANGE);  
+    tft.fillTriangle(199, 59, 210, 47, 213, 55, ILI9341_ORANGE);   // end 1e green block SWR
     tft.drawTriangle(185, 63, 187, 68, 196, 54, ILI9341_GREEN);   // start 2e green block SWR (2 triangles
     tft.fillTriangle(185, 63, 187, 68, 196, 54, ILI9341_GREEN);  
     tft.drawTriangle(187, 68, 196, 54, 198, 60, ILI9341_GREEN);  
