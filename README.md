@@ -18,3 +18,4 @@ Release V14 is a small adjustment to make the display not start earlier when the
 This takes about 3 seconds.
 
 Release V14.1 is a small adjustment to show version details before starting.
+Release V15 is a small adjustment. The color are changed. Green is ends by swr 1:2 and orange is between 2 and 3. Also digital is now with "SWR a 1:" 
