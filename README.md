@@ -1,5 +1,15 @@
+Latest version V16 is made for IDE 2.3.8.
+Older versions V12 and V15 only works on IDE 1.8. X and lower.
+
+Adafruit has made some changes for IDE 2.3.8. 
+Normal you can use Adafruit_ADS1115 ads (0X48) ; // AD converter module address.
+This wont work anymore. You have to change for a older version within IDE 2.3.8 to this
+Adafruit_ADS1115 ads; 
+
+(0X48) is not necessary. 
+
 # SWR_ESP32_ads1115_ILI9341
-he script was written for a TFT 3.2 320 X 240 screen. If you are going to use a smaller screen, the image will not be automatically adjusted. It is intended that this is possible in the new version.
+The script is written for a TFT 3.2 320 X 240 screen. If you are going to use a smaller screen, the image will not be automatically adjusted. It is intended that this is possible in the new version.
 
 There are plans to use the ESP32 to control the SWR and protect the output stage. 100 watts is the maximum power for this SWR version. A higher power is possible if you adjust the calculation and set the scale X100. Also make sure that the input voltage at the ADS1115 does not exceed 5 volts. In that situation, use 2 resistors to divide the voltage.
 
