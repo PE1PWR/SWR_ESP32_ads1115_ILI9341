@@ -1,3 +1,6 @@
+Again made a major change (16-4-2026). Latest version is V17 with new eSPI driver for a better display.
+Some pin's are changed for the standard club PCB ESP32 board.
+
 Latest version V16 is made for IDE 2.3.8.
 Older versions V12 and V15 only works on IDE 1.8. X and lower.
 
