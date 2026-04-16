@@ -1,7 +1,9 @@
 Again made a major change (16-4-2026). Latest version is V17 with new eSPI driver for a better display.
-Some pin's are changed for the standard club PCB ESP32 board.
+Some pin's are changed for the standard club PCB ESP32 board. Also on Version V17 you dont need tot load SWR_ILI9341.h any more.
+Change User_Setup_Select within TFT-ESPI libary and select the correct display. 
+After that change Setup1_ILI9341 in the same TFT-eSPI libary for your own pin connecties you need.
 
-Latest version V16 is made for IDE 2.3.8.
+Latest version V16 (2026-2-1) is made for IDE 2.3.8.(is based on ADAfruit). Program is slow. 
 Older versions V12 and V15 only works on IDE 1.8. X and lower.
 
 Adafruit has made some changes for IDE 2.3.8. 
@@ -9,7 +11,7 @@ Normal you can use Adafruit_ADS1115 ads (0X48) ; // AD converter module address.
 This wont work anymore. You have to change for a older version within IDE 2.3.8 to this
 Adafruit_ADS1115 ads; 
 
-(0X48) is not necessary. 
+(0X48) is not necessary anymore. 
 
 # SWR_ESP32_ads1115_ILI9341
 The script is written for a TFT 3.2 320 X 240 screen. If you are going to use a smaller screen, the image will not be automatically adjusted. It is intended that this is possible in the new version.
