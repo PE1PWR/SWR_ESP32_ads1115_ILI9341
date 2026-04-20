@@ -2,13 +2,13 @@
 
 #define SMOOTH_FONT
 #define TFT_CLK 18
-#define TFT_MISO 23
-#define TFT_MOSI 19
+#define TFT_MISO 19
+#define TFT_MOSI 23
 #define TFT_DC 2
-#define TFT_CS 4
-#define TFT_RST 15    // Chip select for TFT screen
-#define PB_PIN = 13
-#define LED_PIN = 26
+#define TFT_CS 15
+#define TFT_RST 4   // Chip select for TFT screen
+//#define PB_PIN = 13
+#define LED_PIN = 33
 #define SPI_READ_FREQUENCY  40000000
 #define SPI_FREQUENCY  80000000 
 //#define SPI_TOUCH_FREQUENCY  2500000
@@ -25,3 +25,4 @@
 #define major_graduations 0.1  // number_of_readings / 10 to set the scale graduations
 
 Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC, TFT_MOSI, TFT_CLK, TFT_RST, TFT_MISO);// TFT 3.2 scherm
+
